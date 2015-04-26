@@ -1,6 +1,6 @@
 import java.util.ArrayList; 
 
-public class MyStack {
+public class MyStack implements Cloneable{
 	private ArrayList<Object> list = new ArrayList<Object>() ;
 	
 	//Return true or false
@@ -31,5 +31,16 @@ public class MyStack {
 	public String toString(){
 		return "stack" + list.toString();
 	}
-	
+	//Deep copy of the list field
+	public Object clone(){
+		MyStack stack = null;
+		try{
+			stack = (MyStack)super.clone();
+			stack.list = (ArrayList<Object>) list.clone();
+			
+		}catch(CloneNotSupportedException ex){
+			ex.printStackTrace();
+		}
+		return stack;
+	}
 }
