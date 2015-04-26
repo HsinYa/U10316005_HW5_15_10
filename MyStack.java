@@ -25,6 +25,10 @@ public class MyStack implements Cloneable{
 	public void push(Object o){
 		list.add(o);
 	}
+	//Return the element of the list
+	public Object get(int i){
+		return list.get(i);
+	}
 	
 	@Override
 	//Return toString()
